@@ -1,10 +1,33 @@
 <Alloy>
-	<NavigationWindow module="ui">
-		<Window class="container" title="Tasks">
-			<View class="wrapper"><TextField id="taskName"/><Button onClick="handleAdd" id="addTask"/></View>
-			<TableView dataCollection="tasks" onClick="handleRowClick">
-				<TableViewRow hasCheck="{completed}"><Label text="{description}"/></TableViewRow>
-			</TableView>
-		</Window>
-	</NavigationWindow>
+    <NavigationWindow module="ui">
+        <Window class="container" title="Tasks">
+            <View top="0" class="wrapper">
+                <TextField id="taskName"/>
+                <Button id="addTask" onClick="handleAdd"/>
+            </View>
+            
+            <TableView top="50"dataCollection="tasks" onClick="handleRowClick">
+                <TableViewRow hasCheck="{completed}">
+                    <Label text="{description}"/>
+                </TableViewRow>
+            </TableView>
+           
+			<ScrollView id="scrollView" visible="false" width="fill" 
+							height="195" contentWidth="fill" backgroundColor="#252526" 
+							borderRadius="10" top="300" left="15" right="15" bottom="15"
+							hiddenBehavior="Titanium.UI.HIDDEN_BEHAVIOR_GONE"
+			>
+					<Label id="results" height="size" width="fill" top="15" top="15" 
+							left="15" right="15" bottom="15" color="white" 
+							verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP"
+					/>
+			</ScrollView>
+            <ImageView id="micButton" top="500" 
+            	onTouchstart="handleMicButtonTouchStart"
+            	onTouchend="handleMicButtonTouchEnd"
+            	image="/images/microphone.png"
+            	visible="true"
+            />
+        </Window>
+    </NavigationWindow>
 </Alloy>

@@ -2,7 +2,7 @@
 	left: 15
 }
 "Window" : {
-	layout: "vertical",
+	/*layout: "vertical",*/
 	barColor: "red",
 	navTintColor: "black"
 }
