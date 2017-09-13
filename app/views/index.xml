@@ -1,10 +1,17 @@
 <Alloy>
-	<NavigationWindow module="ui">
-		<Window class="container" title="Tasks">
-			<View class="wrapper"><TextField id="taskName"/><Button onClick="handleAdd" id="addTask"/></View>
-			<TableView dataCollection="tasks" onClick="handleRowClick">
-				<TableViewRow hasCheck="{completed}"><Label text="{description}"/></TableViewRow>
-			</TableView>
-		</Window>
-	</NavigationWindow>
+    <Collection src="tasks"/>
+    <!--Model src="tasks"/-->
+    <NavigationWindow module="ui">
+        <Window class="container" title="task">
+            <View class="wrapper">
+                <TextField id="taskName"/>
+                <Button onClick="handleAdd" id="addTask"/>
+            </View>
+            <TableView dataCollection="tasks" onClick="handleRowClick">
+                <TableViewRow hasCheck="{completed}">
+                    <Label text="{description}"/>
+                </TableViewRow>
+            </TableView>
+        </Window>
+    </NavigationWindow>
 </Alloy>
